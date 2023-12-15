@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    <div class="container">
+      Termék kezelése
+    </div>
+   </title>
+  <style>
+    /* CSS a jobb megjelenésért */
+  .container {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 24px; /* Kicsit nagyobb betűméret */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff; /* Háttérszín */
+  background-image: radial-gradient(circle,#ff0000 20%, transparent 30%);
+  background-size: 100px 100px; /* Pöttyök mérete */
+}
+
+.container {
+  padding: 20px;
+  color: #000; /* Fekete szöveg */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.container input[type="text"],
+.container button {
+  padding: 8px;
+  margin: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.container button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.container button:hover {
+  background-color: #45a049;
+}
+  </style>
+</head>
+<body>
+  <h1>Termék kezelése</h1>
+  <div class="container">
+    <div class="input-group">
+      <label for="products">Termékek (pl. "Termék1 1000, Termék2 2000, ..."): </label>
+      <input type="text" id="products" />
+    </div>
+    <button onclick="calculate()">Számol</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+function calculate() {
+    const input = document.getElementById('products').value;
+    const products = input.split(',').map(item => {
+      const [name, price] = item.trim().split(' ');
+      return { name, price: parseFloat(price) };
+    });
+  
+    const sortedProducts = products.slice().sort((a, b) => a.price - b.price); // Termékek rendezése ár szerint
+  
+    const cheapestProducts = sortedProducts.filter(product => product.price === sortedProducts[0].price); // Legolcsóbb termékek kiválasztása
+  
+    let cheapestWithName = null;
+    if (cheapestProducts.length === 1) {
+      cheapestWithName = cheapestProducts[0]; // Ha csak egy legolcsóbb termék van, azt választjuk ki
+    } else {
+      // Ha több legolcsóbb termék van, a fantázianév alapján választunk
+      const cheapestNames = cheapestProducts.map(product => product.name);
+      const desiredName = prompt(`Kérem adja meg a kívánt fantázianevet (${cheapestNames.join(', ')}):`);
+      cheapestWithName = cheapestProducts.find(product => product.name === desiredName);
+    }
+  
+    const totalPrices = products.reduce((sum, product) => sum + product.price, 0);
+    const averagePrice = totalPrices / products.length;
+  
+    const priceDifferences = products.map(product => Math.pow(product.price - averagePrice, 2));
+    const variance = priceDifferences.reduce((sum, difference) => sum + difference, 0) / products.length;
+    const standardDeviation = Math.sqrt(variance);
+  
+    const resultElement = document.getElementById('result');
+    resultElement.innerHTML = `
+      <p>Legolcsóbb termék fantázianév: ${cheapestWithName.name}</p>
+      <p>Átlagár: ${averagePrice.toFixed(2)}</p>
+      <p>Árak szórása: ${standardDeviation.toFixed(2)}</p>
+    `;
+  }
+</script> 
