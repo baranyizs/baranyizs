@@ -1,0 +1,74 @@
+/* Reset és alap stílusok */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #333;
+}
+
+/* Footer stílusok */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ccc; /* Szürke háttérszín */
+    
+    .image-row {
+        width: 45%; /* Változtasd meg igény szerint a képek méretét */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; /* A képek egymástól való távolságának beállítása a soron belül */
+    }
+    
+    .image-row img {
+        width: 100%; /* Teljes szélességű képek a soron belül */
+        height: auto;
+        margin: 10px; /* Változtasd meg igény szerint a margót */
+        object-fit: contain; /* A képek méretarányos megjelenítése */
+    }
+    /* Fekete-fehér (szatír) hatás */
+
+/* Általános formázás (opcionális) */
+.lazy-load {
+    width: 200px; /* Választható kép méret */
+    height: auto; /* Választható kép méret */
+    opacity: 0; /* Kezdeti átlátszóság */
+    transition: opacity 0.3s ease-in-out; /* Átlátszóság átmenet */
+    margin-right: 10px; /* Választható margó a képek között */
+  }
+  .lazy-load:last-child {
+    margin-right: 0; /* Az utolsó képnek nincs jobb margója */
+}
+  }
+
