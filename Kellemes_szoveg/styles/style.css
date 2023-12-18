@@ -1,6 +1,6 @@
 /* Reset és alap stílusok */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Amatic SC', cursive;
     margin: 0;
     padding: 0;
 }
@@ -9,7 +9,7 @@ header {
     background-color: #444;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 header h1 {
@@ -25,7 +25,7 @@ section {
 }
 
 h2 {
-    color: #333;
+    color: #d2a2a2;
 }
 
 /* Footer stílusok */
@@ -39,7 +39,7 @@ footer {
     width: 100%;
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Amatic SC', cursive;
     margin: 0;
     padding: 0;
     background-color: #ccc; /* Szürke háttérszín */
@@ -48,9 +48,9 @@ body {
     
 /* Általános formázás (opcionális) */
 .lazy-load {
-    width: 40vw;
-    height: auto;
-    opacity: 0; /* Kezdeti átlátszóság */
+    width:auto;
+    height: 370px;
+    opacity: 0;auto /* Kezdeti átlátszóság */
     transition: opacity 0.3s ease-in-out; /* Átlátszóság átmenet */
     margin-right: 10px; /* Választható margó a képek között */
   }
@@ -60,8 +60,16 @@ body {
 
 .image-coloumn {
     align-items: center;
-
 }
 .image_container{
     margin: auto;
 }
+
+.video-container {
+    display: flex; /* Flexbox elrendezés */
+    justify-content: space-between; /* Elemek egymástól való elhelyezése */
+    align-items: center; /* Elemek középre igazítása */
+  }
+  .video-container iframe {
+    max-width: 45%; /* Maximális szélesség beállítása a videóknak */
+  }
