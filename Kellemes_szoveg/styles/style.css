@@ -22,6 +22,7 @@ main {
     z-index: 0;
     width: 100%
 }
+
 .show-content {
     opacity: 1;
     transition: 1000ms;
@@ -51,6 +52,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 10;
 }
 body {
     font-family: 'Amatic SC', cursive;
@@ -61,11 +63,13 @@ body {
 
 .image-coloumn {
     align-items: center;
+    z-index: 5;
 }
 .image-container{
     margin: auto;
     justify-content: center;
     display: flex;
+    z-index: 5;
 }
 
 .video-container {
@@ -73,6 +77,8 @@ body {
     justify-content: space-between; /* Elemek egymástól való elhelyezése */
     align-items: center; /* Elemek középre igazítása */
     position: relative;
+    padding-bottom: 40px;
+    z-index: 5;
   }
   .video-container iframe {
     max-width: 45%; /* Maximális szélesség beállítása a videóknak */
@@ -80,4 +86,6 @@ body {
     justify-content: center;
     display: flex;
     position: relative;
+    padding-bottom: 40px;
+    z-index: 5;
   }
