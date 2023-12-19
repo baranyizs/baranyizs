@@ -1,4 +1,3 @@
-/* Reset és alap stílusok */
 body {
     font-family: 'Amatic SC', cursive;
     margin: 0;
@@ -17,7 +16,16 @@ header h1 {
 }
 
 main {
-    padding: 20px;
+    opacity: 0;
+    transition: 1000ms;
+    position: absolute;
+    z-index: 0;
+    width: 100%
+}
+.show-content {
+    opacity: 1;
+    transition: 1000ms;
+    z-index: 1;
 }
 
 section {
@@ -28,7 +36,13 @@ h2 {
     color: #d2a2a2;
 }
 
-/* Footer stílusok */
+img {
+    width:auto;
+    height: 370px;
+    align-items: center;
+    margin-right: 20px;
+}
+
 footer {
     background-color: #333;
     color: #fff;
@@ -42,27 +56,16 @@ body {
     font-family: 'Amatic SC', cursive;
     margin: 0;
     padding: 0;
-    background-color: #ccc; /* Szürke háttérszín */
-
-}
-    
-/* Általános formázás (opcionális) */
-.lazy-load {
-    width:auto;
-    height: 370px;
-    opacity: 0;auto /* Kezdeti átlátszóság */
-    transition: opacity 0.3s ease-in-out; /* Átlátszóság átmenet */
-    margin-right: 10px; /* Választható margó a képek között */
-  }
-  .lazy-load:last-child {
-    margin-right: 0; /* Az utolsó képnek nincs jobb margója */
+    background-color: #ccc;
 }
 
 .image-coloumn {
     align-items: center;
 }
-.image_container{
+.image-container{
     margin: auto;
+    justify-content: center;
+    display: flex;
 }
 
 .video-container {
@@ -72,4 +75,7 @@ body {
   }
   .video-container iframe {
     max-width: 45%; /* Maximális szélesség beállítása a videóknak */
+    margin: auto;
+    justify-content: center;
+    display: flex;
   }
