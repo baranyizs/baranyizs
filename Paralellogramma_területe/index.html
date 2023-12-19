@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Paralelogramma Terület Számító</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <div id="calculator">
+    <h2>Paralelogramma Terület Számító</h2>
+    <label for="oldalHossz">Oldal hossza:</label>
+    <input type="number" id="oldalHossz">
+    <label for="magassag">Magasság:</label>
+    <input type="number" id="magassag">
+    <button onclick="szamolTeruletMagassaggal()">Számolás magassággal</button>
+
+    <label for="eszog">Szög (fokban):</label>
+    <input type="number" id="eszog">
+    <label for="oldalA">Oldal A hossza:</label>
+    <input type="number" id="oldalA">
+    <label for="oldalB">Oldal B hossza:</label>
+    <input type="number" id="oldalB">
+    <button onclick="szamolTeruletSzoggel()">Számolás szöggel</button>
+
+    <h3>Eredmény:</h3>
+    <p id="eredmeny"></p>
+  </div>
+</body>
+</html>
