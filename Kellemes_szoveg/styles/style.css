@@ -1,5 +1,5 @@
 body {
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
 }
@@ -72,10 +72,12 @@ body {
     display: flex; /* Flexbox elrendezés */
     justify-content: space-between; /* Elemek egymástól való elhelyezése */
     align-items: center; /* Elemek középre igazítása */
+    position: relative;
   }
   .video-container iframe {
     max-width: 45%; /* Maximális szélesség beállítása a videóknak */
     margin: auto;
     justify-content: center;
     display: flex;
+    position: relative;
   }
