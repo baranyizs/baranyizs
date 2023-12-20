@@ -1,9 +1,8 @@
 function generateRandomString() {
         var randomString = Math.random().toString(36).substring(2);
-        return randomString;
+        return randomstring.sort(function () { return 0.5 - Math.random(); }).slice(0, 3);
     }
-
-    function generateRandomStrings() {
+function generateRandomStrings() {
         var strings = [];
         for (var i = 1; i < 7; i++) {
             strings.push(document.getElementById("inputString" + i).value);
@@ -15,9 +14,8 @@ function generateRandomString() {
             output.push(strings[randomIndex]);
             strings.splice(randomIndex, 1);
         }
-        document.getElementById("outputString1").value = output[0];
-        document.getElementById("outputString2").value = output[1];
-        document.getElementById("outputString3").value = output[2];
-
+        return output.sort(function () { return 0.5 - Math.random(); }).slice(0, 3);
+        document.getElementById("outputString1").textContent = output[0];
+        document.getElementById("outputString2").textContent  = output[1];
+        document.getElementById("outputString3").textContent  = output[2]; 
     }
-   
