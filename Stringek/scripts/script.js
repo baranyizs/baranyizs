@@ -14,8 +14,8 @@ function generateRandomStrings() {
             output.push(strings[randomIndex]);
             strings.splice(randomIndex, 1);
         }
-        return output.sort(function () { return 0.5 - Math.random(); }).slice(0, 3);
-        document.getElementById("outputString1").textContent = output[0];
-        document.getElementById("outputString2").textContent  = output[1];
-        document.getElementById("outputString3").textContent  = output[2]; 
+        output = output.sort(function () { return 0.5 - Math.random(); }).slice(0, 3);
+        document.getElementById("outputString1").value = output[0];
+        document.getElementById("outputString2").value  = output[1];
+        document.getElementById("outputString3").value  = output[2]; 
     }
